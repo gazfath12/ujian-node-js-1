@@ -1,24 +1,24 @@
+
 function validasiPhoneNumber(phoneNumber) {
-    if (!/^\d{10,14}$/.test(phoneNumber)) {
-        console.log(
-          "Nomor HP tidak valid: Nomor harus terdiri dari 10 hingga 14 digit angka."
-        );
+    if (phoneNumber.length < 9 && !/^[a-zA-Z]$/.test(phoneNumber)) {
+        console.log("invalid terdapat huruf di dalam angka");
         return false;
       }
+    if (phoneNumber.length < 10) {
+        console.log(
+          "Nomor HP tidak valid// kependekan"
+        );
+        return false;
+      };
+      
     
-  if (!/^[a-zA-Z]+$/.test(phoneNumber)) {
-    console.log("invalid terdapat huruf");
-    return false;
-  }
-  if (phoneNumber.length < 10) {
-    console.log(
-      "Nomor HP tidak valid: Nomor harus terdiri dari 10 hingga 13 digit angka."
-    );
-    return false;
-  }
+    
+    
   
-  return true;
-}
-console.log(validasiPhoneNumber("089297928"))
-console.log(validasiPhoneNumber("09890abcd"))
-console.log(validasiPhoneNumber("122344"))
+    console.log("valid");
+    return true;
+  }
+  console.log(validasiPhoneNumber("08929792811111")); // valid 
+  console.log(validasiPhoneNumber("09811abc")); // invalid huruf di dalam angka
+  console.log(validasiPhoneNumber("123456789"));// nomor tidak valid kependekan
+  
